@@ -1,0 +1,14 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "1234",
+  "database": "chat",
+  "entities": ["./src/entities/**.ts"],
+  "migrationsTableName": "migrations",
+  "migrations": ["./src/database/migrations/**.ts"],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
+}

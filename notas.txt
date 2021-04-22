@@ -1,0 +1,104 @@
+//ciar o package.json
+yarn init -y
+
+//instalar o express
+yarn add express
+
+//instalar os tipos do express
+yarn add @types/express -D
+
+//instalar o typescript
+yarn add typescript -D
+
+//cria um arquivo de configuração do typescript
+yarn tsc --init
+
+//no arquivo tsconfing.json definir strict para false 
+//para não ficar verficando a tipagem pois o typescript já faz isso
+"strict": false
+
+
+//instalar atradutor para o node em relação aos imports e exports
+yarn add ts-node-dev -D
+
+
+:::::::::::::: 2º dia ::::::::::::::::::::::::
+
+//utilização de um Query Builder ao invés do driver nativo do banco
+Knex.js -> http://knexjs.org/
+
+//OU
+
+//utilização de um ORM (Object Relational mapping)
+typeorm -> https://typeorm.io/#/
+OU
+sequelize -> https://sequelize.org/
+
+//typeorm -> instalar
+npm install typeorm --save
+//instalar também o metadata
+npm install reflect-metadata --save e fazer o import "reflect-metadata"
+//instalar o database driver
+npm install mysql --save
+
+//utilizando o yarn para instalar tudo junto
+yarn add typeorm reflect-metadata mysql
+
+//adicionar o arquivo ormconfig.json próximo ao package.json e configurar com os dados da conexão
+      {
+            "type": "mysql",
+            "host": "localhost",
+            "port": 3306,
+            "username": "test",
+            "password": "test",
+            "database": "test";
+      }
+//fazer o import da conexão no arquivo index.ts
+import { createConnection } from 'typeorm';
+
+createConnection();
+
+//import a conexão do arquivo index.ts para o servidor 
+import './database';
+
+//utilizar migrations ou através do CLI ou através do script no package.json
+"typeorm": "ts-node-dev node_modules/typeorm/cli.js"
+
+//configurar o migrations no arquivo ormconfig.json
+      "entities": ["./src/database/entities/*.ts"],
+	"migrationsTableName": "migrations",
+	"migrations": ["./src/database/migrations/*.ts"],
+	"cli": {"migrationsDir": "./src/database/migrations"}
+
+//Criar uma migration
+yarn typeorm migration:create -n CreateSettings
+
+//executar a migration
+yarn typeorm migration:run
+
+//revertendo a migration
+yarn typeorm migration:revert
+
+//adicinando a biblioteca uuid
+ yarn add uuid 
+ yarn add @types/uuid -D
+
+
+ migrations -> mantém as informações de atualizações do banco
+ entities -> mantém o modelo para o negócio
+ repositories -> mantém o acesso aos dados
+ controller -> faz a regra de negócio
+
+ :::::::::: 3º dia :::::::::::::::::
+
+
+https://www.uuidgenerator.net/ -> para gerar uuids
+
+
+https://rseat.in/nlw5-trilhareactjs-aula1
+
+
+
+
+
+senha : astronautas
