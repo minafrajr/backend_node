@@ -95,10 +95,27 @@ yarn typeorm migration:revert
 https://www.uuidgenerator.net/ -> para gerar uuids
 
 
-https://rseat.in/nlw5-trilhareactjs-aula1
+ :::::::::: 4º dia :::::::::::::::::
+
+/*
+* Diferentemente da requisição entre um cliente -> servidor
+* a utilização de um socket é vantajoso pois não há a necessidade de 
+* conexão e não consome um recurso aguardando essa conexão
+*/
+
+//instalção dos socket que fará o papel de um servidor
+ yarn add socket.io
+ yarn add @types/socket.io
+
+//Para testar o socket dentro da aplicação de backend
+//utilizou o codigo abaixo
+app.use(express.static(path.join(__dirname, '..', 'public')));
+app.set('views', path.join(__dirname, '..', 'public'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
+app.get('/', (request, response) => {
+	return response.render('html/client.html');
+});
 
 
-
-
-
-senha : astronautas
