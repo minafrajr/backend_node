@@ -25,6 +25,12 @@ class UsersService {
 		//irá retornar o usuário criado pois ele não existe no banco
 		return user;
 	}
+
+	async findByEmail(email: string) {
+		const userExists = await this.usersRepository.findOne({ email });
+
+		return userExists;
+	}
 }
 
 export { UsersService };
