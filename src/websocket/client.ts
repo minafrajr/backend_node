@@ -1,4 +1,3 @@
-import { Connection } from '../entities/Connection';
 import { io } from '../http';
 import { ConnectionsService } from '../services/ConnectionsService';
 import { MessagesService } from '../services/MessagesService';
