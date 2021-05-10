@@ -34,6 +34,7 @@ class MessagesService {
 		//com informação do usuário
 		const list = await this.messagesRepository.find({
 			where: { user_id },
+			order: { created_at: 'ASC' },
 			relations: ['user'],
 		});
 

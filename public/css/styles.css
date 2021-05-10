@@ -296,7 +296,7 @@ input[type='text']:focus {
 
 .admin_message_admin {
 	width: 300px;
-	background: #e0e0e0;
+	background: #a7dbfa;
 	padding: 10px;
 	margin: 12px;
 	display: flex;
@@ -325,6 +325,11 @@ input[type='text']:focus {
 }
 
 .admin_date {
+	font-size: 10px;
+	color: #fff;
+}
+
+.admin_user_email {
 	font-size: 10px;
 	color: #fff;
 }
